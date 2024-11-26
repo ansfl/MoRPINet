@@ -38,8 +38,6 @@ class ResultFile:
         self.res_file.write('****Results:****\n')
         self.write_tables()
 
-        self.write_data_to_file()
-
         self.res_file.write('\n****Configs:****\n')
         self.write_configs(self.config.to_dict())
 
@@ -112,8 +110,3 @@ class ResultFile:
         if self.model.model is not None:
             self.res_file.write('\nD-Net architecture:\n')
             self.res_file.write(str(self.model.model))
-
-    def write_data_to_file(self):
-        for key in self.config.data_to_file.data_to_file_list.keys():
-            msg, data = self.config.data_to_file.data_to_file_list[key]
-            self.res_file.write(f'\n{msg}: {data}\n')
