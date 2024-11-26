@@ -1,0 +1,26 @@
+
+# training parameters
+epochs: 300
+batch_size: 2048
+
+# training functions
+loss: L1Loss
+
+optimizer:
+  type: Adam
+  args:
+    lr: 0.0025
+
+scheduler:
+  type: ReduceLROnPlateau
+  args:
+    mode: 'min'
+    patience: 20
+    factor: 0.5
+    min_lr: 1.0e-6
+    verbose: True
+
+model:
+  type: DnetModel
+  args:
+    output_features: 1

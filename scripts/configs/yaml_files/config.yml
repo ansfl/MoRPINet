@@ -1,0 +1,42 @@
+
+# running options
+train: off
+test: on
+MoRPI: on
+INS:  off
+
+# missions
+train_missions: ['a', 'h', 'j', 'k', 'l', 'm', 'n', 'o', 'r']
+test_missions: ['d', 'e', 'f', 'g']
+MoRPI_train_missions: ['a', 'j', 'k', 'n']
+INS_missions: ['b', 'c']
+
+# show graphs
+plot_missions: off
+plot_reconstruct_missions: on
+
+# dataset options
+window_size: 2
+overlap: 1
+overlap_test: off
+
+# data settings
+imu_freq: 120 # Hz
+rtk_freq: 10 # Hz
+g: 9.796  # [m/s^2] gravity
+
+do_calibration: off
+do_ins_calibration: on
+calibration_func: do_zero_order_calib
+do_lpf: off
+
+gyro_in_degrees: True
+madgwick_avg_angle: on
+
+net_mode: 'MoRPINet'
+
+# weights file path to load
+dnet_weights_file: 'best_results/Dnet_weights.pth'
+
+# MoRPI configs
+morpi_turn_threshold: 45  # degrees
