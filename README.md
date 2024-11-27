@@ -50,7 +50,9 @@ These sub-trajectories are consistent with MoRPI, as MoRPI is specifically desig
 
 ## Algorithm
 
+<p align="center">
 <img alt="MoRPINet Scheme" src="./figures/method.png" width="400">
+</p>
 
 MoRPINet framework has three phases:
 1. **Distance Estimation:** A shallow, yet efficient, network to estimate the distance over the required time window.
@@ -58,7 +60,10 @@ MoRPINet framework has three phases:
 3. **Position Update:** A dead-reckoning position update is applied based on the distance and heading from previous phases.
 
 The neural network, D-Net, is defined as follows:
+
+<p align="center">
 <img alt="D-Net Scheme" src="./figures/CNN.png" width="400">
+</p>
 
  ## Citation
  
