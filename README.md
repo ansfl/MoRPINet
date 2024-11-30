@@ -26,27 +26,13 @@ The RC car was equipped with a Javad SIGMA-3N RTK sensor, which provides positio
 Additionally, five IMUs were mounted on a rigid surface at the front of the RC car. 
 We worked with the Movella DOT IMUs, capable of operating at a 120[Hz]. 
 The DOT software allows synchronization between the IMUs.
-
 Thirteen distinct trajectories were recorded during field experiments with a total of 58 minutes for a single IMU and  290 for the entire dataset. 
-Each trajectory includes GT data obtained from the GNSS RTK, and inertial measurements recorded simultaneously by the five IMUs mounted on the RC car.
-
-Each recording session began with a one-minute static period, which was utilized for stationary calibration and synchronize the timing between the IMU and GNSS RTK measurements. 
-Synchronization between the two sensors was achieved during post-processing. 
+Each trajectory includes GT data obtained from the GNSS RTK, and inertial measurements recorded simultaneously by the five IMUs mounted on the RC car. Each recording session began with a one-minute static period, which was utilized for stationary calibration and synchronize the timing between the IMU and GNSS RTK measurements. Synchronization between the two sensors was achieved during post-processing. 
 The biases of the IMU's accelerometers and gyroscopes were determined by averaging the IMU measurements for a few seconds taken during the stationary period of each recording.
 
-The test dataset includes four trajectories of driving between two fixed points with a distance of about 25 meters. 
-Those trajectories were recorded while the robot was moving in a snake-like slithering motion. 
-The test dataset is the same for all baseline methods (INS and MoRPI) and the proposed MoRPINet approach. 
-During assessment time, we tested MoRPI using the gain achieved by the corresponding training group, and for MoRPINet we used D-net with the optimal weights from the training process.
-Additionally, two straight-line motion trajectories with a distance of about 25 meters were recorded. 
+The test dataset includes four trajectories of driving between two fixed points with a distance of about 25 meters.  Those trajectories were recorded while the robot was moving in a snake-like slithering motion. 
+The test dataset is the same for all baseline methods (INS and MoRPI) and the proposed MoRPINet approach.  Additionally, two straight-line motion trajectories with a distance of about 25 meters were recorded. 
 We used the two straight-line motion trajectories to evaluate only the INS method as the common baseline setup. 
-
-The rest of the trajectories are used for the neural network training dataset. 
-All of them include snake-like slithering motion with variable frequency and amplitude with slowly changing heading direction (no sharp turns).
-
-For MoRPI A and G methods, the role of the training dataset is to acquire the approach gain. 
- Sub-trajectories composed of straight segments from the MoRPINet training dataset are used to estimate the required MoRPI gain G and lead to optimal results given this training dataset. 
-These sub-trajectories are consistent with MoRPI, as MoRPI is specifically designed to operate on paths composed of straight segments. 
 
 ## Algorithm
 
@@ -59,7 +45,7 @@ MoRPINet framework has three phases:
 2. **Heading determination:** Madgwick filter is employed for heading estimation in the required window size.
 3. **Position Update:** A dead-reckoning position update is applied based on the distance and heading from previous phases.
 
-The neural network, D-Net, is defined as follows:
+D-Net structure is presented in the figure below.
 
 <p align="center">
 <img alt="D-Net Scheme" src="./figures/CNN.png" width="400">
@@ -71,11 +57,10 @@ The neural network, D-Net, is defined as follows:
  ```
  @misc{etzion2024snakeinspiredmobilerobotpositioning,
       title={Snake-Inspired Mobile Robot Positioning with Hybrid Learning}, 
-      author={Aviad Etzion and Itzik Klein},
+      author={Aviad Etzion, Nadav Cohen, Orzion Levy, Zeev Yampolsky, and Itzik Klein},
       year={2024},
       eprint={2411.17430},
       archivePrefix={arXiv},
-      primaryClass={cs.RO},
       url={https://arxiv.org/abs/2411.17430}, 
 }
  ```
