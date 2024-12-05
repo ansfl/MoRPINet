@@ -55,12 +55,13 @@ D-Net structure is presented in the figure below.
  
  If you found the experimental DATA useful or used our algorithm for your research, please cite our paper:
  ```
- @misc{etzion2024snakeinspiredmobilerobotpositioning,
+@misc{etzion2024snakeinspiredmobilerobotpositioning,
       title={Snake-Inspired Mobile Robot Positioning with Hybrid Learning}, 
-      author={Aviad Etzion, Nadav Cohen, Orzion Levy, Zeev Yampolsky, and Itzik Klein},
+      author={Aviad Etzion and Nadav Cohen and Orzion Levy and Zeev Yampolsky and Itzik Klein},
       year={2024},
       eprint={2411.17430},
       archivePrefix={arXiv},
+      primaryClass={cs.RO},
       url={https://arxiv.org/abs/2411.17430}, 
 }
  ```
